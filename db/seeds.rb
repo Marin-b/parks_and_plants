@@ -6,7 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+puts "Cleaning database"
+Garden.destroy_all
+Tag.destroy_all
 
+tags = ["Fruit tree", "Cactus", "Greasy plant",  "Flower", "Ferns", "Conifers"]
+
+puts "Creating tags"
+tags.each do |tag|
+  Tag.create(name: tag)
+end
+
+puts "Creating gardens"
 Garden.create(
   name: "The Garden",
   banner_url: "https://raw.githubusercontent.com/lewagon/fullstack-images/master/rails/parks-and-plants/garden_1.jpg"

@@ -3,7 +3,8 @@
   background-position: center;
   height: 180px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   color: white;
   font-size: 24px;
@@ -11,4 +12,16 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+.tags-container {
+  display: flex;
+
+  .tag-pill {
+    font-size: 12px;
+    background: $success;
+    border-radius: 5px;
+    margin-left: 5px;
+    padding: 5px;
+    opacity: 0.8;
+  }
 }

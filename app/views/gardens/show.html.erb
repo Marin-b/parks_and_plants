@@ -10,13 +10,20 @@
 
     <% @plants.each do |plant| %>
       <div class="col-4">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= plant.photo_url %>)">
-          <div>
+        <div class="card-category py-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= plant.photo_url %>)">
+
+            <div class='tags-container'>
+              <% plant.tags.each do |tag| %>
+                <div class='tag-pill'>
+                  <%= tag.name %>
+                </div>
+              <% end -%>
+            </div>
             <p>
               <%= plant.name %>
             </p>
             <%= link_to 'Delete', plant_path(plant), method: :delete, data: { confirm: "Are you sure?" } %>
-          </div>
+            <%= link_to 'Add a tag', new_plant_plant_tag_path(plant)  %>
         </div>
       </div>
     <% end -%>
